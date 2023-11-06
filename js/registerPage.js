@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function(){
             window.location.href = "http://localhost:5000/pages/admin.html";
         } else if (data.level == 2) {
             window.location.href = "http://localhost:5000/pages/voting.html";
+        } else if (data.level !=0){
+            window.location.href = "http://localhost:5000/";
         }
     })
 });

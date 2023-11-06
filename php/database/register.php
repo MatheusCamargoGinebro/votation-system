@@ -8,39 +8,39 @@ header("Access-Control-Allow-Headers: Content-Type");
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-if(isset($data['name']) && isset($data['email']) && isset($data['password'])){
+if (isset($data['name']) && isset($data['email']) && isset($data['password'])) {
     $sql = "SELECT * FROM `estudantes` WHERE `email` = '" . $data['email'] . "'";
     $result = mysqli_query($conn, $sql);
 
-    if(mysqli_num_rows($result) == 0){
+    if (mysqli_num_rows($result) == 0) {
         $emailStatus = true;
-    }else{
+    } else {
         $emailStatus = false;
     }
 
     $sql = "SELECT * FROM `estudantes` WHERE `nome_estudante` = '" . $data['name'] . "'";
     $result = mysqli_query($conn, $sql);
 
-    if(mysqli_num_rows($result) == 0){
+    if (mysqli_num_rows($result) == 0) {
         $nameStatus = true;
-    }else{
+    } else {
         $nameStatus = false;
     }
 
-    if($emailStatus == false || $nameStatus == false){
+    if ($emailStatus == false || $nameStatus == false) {
         http_response_code(201);
         echo json_encode(array("session" => false, "level" => 0, "message" => "Dados já cadastrados.", "email" => $emailStatus, "name" => $nameStatus));
-    } else{
+    } else {
         $sql = "INSERT INTO `estudantes` (`nome_estudante`, `email`, `senha`) VALUES ('" . $data['name'] . "', '" . $data['email'] . "', '" . $data['password'] . "')";
         $result = mysqli_query($conn, $sql);
 
-        if($result){
+        if ($result) {
             $sql = "SELECT * FROM `estudantes` WHERE `nome_estudante` = '" . $data['name'] . "' AND `senha` = '" . $data['password'] . "'";
             $result = mysqli_query($conn, $sql);
 
-            if(mysqli_num_rows($result) == 1){
+            if (mysqli_num_rows($result) == 1) {
                 $usuario = mysqli_fetch_assoc($result);
-                if(!isset($_SESSION)){
+                if (!isset($_SESSION)) {
                     session_start();
                 }
 
@@ -50,18 +50,18 @@ if(isset($data['name']) && isset($data['email']) && isset($data['password'])){
 
                 http_response_code(200);
                 echo json_encode(array("session" => true, "level" => 2, "message" => "Cadastro realizado com sucesso.", "email" => $emailStatus, "name" => $nameStatus));
-            }else{
+            } else {
                 $sessionStatus = false;
                 http_response_code(201);
                 echo json_encode(array("session" => false, "level" => 0, "message" => "Erro ao iniciar a sessão.", "email" => $emailStatus, "name" => $nameStatus));
             }
-        }else{
+        } else {
             $sessionStatus = false;
             http_response_code(201);
             echo json_encode(array("session" => false, "level" => 0, "message" => "Erro ao cadastrar.", "email" => $emailStatus, "name" => $nameStatus));
         }
     }
-}else{
+} else {
     http_response_code(201);
     echo json_encode(array("session" => false, "level" => 0, "message" => "Dados vazios.", "email" => false, "name" => false));
 }

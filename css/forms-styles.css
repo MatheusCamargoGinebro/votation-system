@@ -14,48 +14,51 @@ form {
     margin-bottom: 2rem;
 }
 
-.input-field-div{
+.input-field-div {
     margin-inline: 2rem;
     display: grid;
     gap: 1rem;
 }
 
-.input-div{
+.input-div {
     display: grid;
 }
 
-.input-div label{
+.input-div label {
     margin-bottom: 5px;
     font-size: small;
     color: var(--t-c-1);
 }
 
-.input-div input:not([type="button"]), select{
+.input-div input:not([type="button"]),
+select {
     padding: 10px;
     border-radius: 3px;
     border: 1px solid var(--d-c-3);
     outline: none;
     font-size: small;
-    
+
     z-index: 50;
     transition: all 0.2s;
 }
 
-.input-div input:not([type="button"]):hover, select:hover{
+.input-div input:not([type="button"]):hover,
+select:hover {
     border: 1px solid var(--e-c-1);
     padding-left: 13px;
 }
 
-.input-div input:not([type="button"]):focus, select:focus{
+.input-div input:not([type="button"]):focus,
+select:focus {
     border: 1px solid var(--e-c-2);
     padding-left: 15px;
 }
 
-select{
+select {
     cursor: pointer;
 }
 
-.submit-div{
+.submit-div {
     border-top: 1px solid var(--t-c-2);
     margin-top: 2rem;
     display: flex;
@@ -66,24 +69,24 @@ select{
     padding-top: 1rem;
 }
 
-.legend-div{
+.legend-div {
     margin-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.legend{
+.legend {
     font-size: smaller;
     color: var(--t-c-1);
 }
 
-.legend a{
+.legend a {
     color: var(--e-c-2);
 
     transition: all 0.2s;
 }
 
-.legend a:hover{
+.legend a:hover {
     color: var(--e-c-1);
 }

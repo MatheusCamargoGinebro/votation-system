@@ -28,7 +28,7 @@ if (isset($data['name']) && isset($data['password'])) {
         if ($usuario['id'] == 1) {
             http_response_code(200);
             echo json_encode(array("session" => true, "level" => 1, "message" => "Sessão iniciada com sucesso."));
-        }else{
+        } else {
             http_response_code(200);
             echo json_encode(array("session" => true, "level" => 2, "message" => "Sessão iniciada com sucesso."));
         }

@@ -15,7 +15,7 @@ Exemplo: Fontes, medidas pré-definidas, palhetas de cores, formatos, etc.
 html {
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
-    
+
     /*Divs Colors*/
     --d-c-1: #fcfffe;
     --d-c-2: #f4f8fb;
@@ -53,7 +53,7 @@ body {
     user-select: none;
 }
 
-.Error{
+.Error {
     z-index: 1;
     color: var(--errorColor);
     font-weight: normal;
@@ -66,24 +66,24 @@ body {
     animation: fadein 0.5s;
 }
 
-.submit-div .Error{
+.submit-div .Error {
     left: 0px;
 }
 
 
-.disabled{
+.disabled {
     pointer-events: none;
     opacity: 0.5;
 }
 
-.formRight{
+.formRight {
     border: 1px solid var(--rightColor);
 }
 
-.formError{
+.formError {
     border: 1px solid var(--errorColor);
 }
 
-.formWarning{
+.formWarning {
     border: 1px solid var(--warningColor);
 }
