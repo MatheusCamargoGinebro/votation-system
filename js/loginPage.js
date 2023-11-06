@@ -64,12 +64,14 @@ const submitLoginForm = document.getElementById("login-submit").addEventListener
         const password = document.getElementById("login-password").value;
 
         login(name, password).then((data) => {
-            if(data.level == 0){
-                console.log(data.message);
-            } else if (data.level == 1){
-                window.location.href = "http://localhost:5000/pages/admin.html";
-            } else {
-                window.location.href = "http://localhost:5000/pages/voting.html";
+            if(data.session){
+                if(data.level == 1){
+                    window.location.href = "http://localhost:5000/pages/admin.html";
+                } else if (data.level == 2) {
+                    window.location.href = "http://localhost:5000/pages/voting.html";
+                }
+            }else{
+                changeInputStyle("login-submit", "login-submit-error", data.message, false);
             }
         });
     } else{
