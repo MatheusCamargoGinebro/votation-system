@@ -131,10 +131,18 @@ const submitRegisterForm = document.getElementById("register-submit").addEventLi
         const password = document.getElementById("register-password").value;
 
         register(name, email, password).then((data) => {
+            console.log(data);
             if(data.session === true){
                 window.location.href = "http://localhost:5000/pages/voting.html";
             } else {
-                alert("Erro ao cadastrar usuário.");
+                if(data.email === false) {
+                    changeInputStyle("register-email", "register-email-error", "O email já está cadastrado no sistema.", false);
+                }
+                if(data.name === false) {
+                    changeInputStyle("register-name", "register-name-error", "O nome de usuário já está cadastrado no sistema.", false);
+                }
+
+                changeInputStyle("register-submit", "register-submit-error", data.message, false);
             }
         });
     } else {

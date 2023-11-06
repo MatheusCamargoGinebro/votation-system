@@ -26,13 +26,9 @@ if (isset($data['name']) && isset($data['password'])) {
         $_SESSION['id'] = $usuario['id'];
 
         if ($usuario['id'] == 1) {
-            $_SESSION['admin'] = true;
-
             http_response_code(200);
             echo json_encode(array("session" => true, "level" => 1, "message" => "Sessão iniciada com sucesso."));
         }else{
-            $_SESSION['admin'] = false;
-
             http_response_code(200);
             echo json_encode(array("session" => true, "level" => 2, "message" => "Sessão iniciada com sucesso."));
         }

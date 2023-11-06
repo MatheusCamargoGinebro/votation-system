@@ -28,8 +28,8 @@ if(isset($data['name']) && isset($data['email']) && isset($data['password'])){
     }
 
     if($emailStatus == false || $nameStatus == false){
-        $sessionStatus = false;
         http_response_code(201);
+        echo json_encode(array("session" => false, "level" => 0, "message" => "Dados já cadastrados.", "email" => $emailStatus, "name" => $nameStatus));
     } else{
         $sql = "INSERT INTO `estudantes` (`nome_estudante`, `email`, `senha`) VALUES ('" . $data['name'] . "', '" . $data['email'] . "', '" . $data['password'] . "')";
         $result = mysqli_query($conn, $sql);
@@ -48,23 +48,21 @@ if(isset($data['name']) && isset($data['email']) && isset($data['password'])){
                 $_SESSION['email'] = $usuario['email'];
                 $_SESSION['id'] = $usuario['id'];
 
-                $sessionStatus = true;
-                $message = "Cadastro realizado com sucesso.";
                 http_response_code(200);
+                echo json_encode(array("session" => true, "level" => 2, "message" => "Cadastro realizado com sucesso.", "email" => $emailStatus, "name" => $nameStatus));
             }else{
                 $sessionStatus = false;
-                $message = "Erro ao iniciar a sessão.";
                 http_response_code(201);
+                echo json_encode(array("session" => false, "level" => 0, "message" => "Erro ao iniciar a sessão.", "email" => $emailStatus, "name" => $nameStatus));
             }
         }else{
             $sessionStatus = false;
-            $message = "Erro ao realizar cadastro.";
             http_response_code(201);
+            echo json_encode(array("session" => false, "level" => 0, "message" => "Erro ao cadastrar.", "email" => $emailStatus, "name" => $nameStatus));
         }
     }
-    echo json_encode(array("session" => $sessionStatus, "level" => 2, "message" => $message, "email" => $emailStatus, "name" => $nameStatus));
 }else{
     http_response_code(201);
-    echo json_encode(array("session" => false, "level" => 0, "message" => "Dados vazios.", "email" => "", "name" => ""));
+    echo json_encode(array("session" => false, "level" => 0, "message" => "Dados vazios.", "email" => false, "name" => false));
 }
 ?>

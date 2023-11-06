@@ -12,10 +12,14 @@ async function sessionChecker(){
 
 function changeInputStyle(inputID, inputErrorID, errorMessage, state){
     if(state == true){
-        document.getElementById(inputID).style.border = "1px solid green";
+        if(document.getElementById(inputID).type != "button"){
+            document.getElementById(inputID).style.border = "1px solid green";
+        }
         document.getElementById(inputErrorID).style.top = "-15px";
     } else{
-        document.getElementById(inputID).style.border = "1px solid red";
+        if(document.getElementById(inputID).type != "button"){
+            document.getElementById(inputID).style.border = "1px solid red";
+        }
         document.getElementById(inputErrorID).style.top = "5px";
         document.getElementById(inputErrorID).innerHTML = errorMessage;
     }
