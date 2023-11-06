@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de votação - Votando</title>
+
+    <!-- Ícone -->
+    <link rel="icon" type="image/x-icon" href="../images/ifsp-icon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/basics.css" />
+    <link rel="stylesheet" href="../css/div-styles.css" />
+    <link rel="stylesheet" href="../css/forms-styles.css" />
+  </head>
+  <body>
+    <div class="screen-div">
+      <form method="post">
+        <div class="title-div">
+          <h1>Votando</h1>
+        </div>
+        <div class="input-field-div">
+          <div class="input-div">
+            <label for="voting-email">Email:</label>
+            <input
+              type="email"
+              name="voting-email"
+              id="voting-email"
+              placeholder="Digite seu email" />
+            <p class="Error" id="voting-email-error">
+              Email inválido! Use o padrão email@aluno.ifsp.edu.br
+            </p>
+          </div>
+          <div class="input-div">
+            <label for="voting-candidato">Candidato:</label>
+            <select name="voting-candidato" id="voting-candidato"></select>
+            <p class="Error" id="voting-candidato-error">
+              Selecione um candidato!
+            </p>
+          </div>
+        </div>
+        <div class="input-div submit-div">
+          <input
+            type="button"
+            id="voting-submit"
+            value="Votar"
+            class="button" />
+        </div>
+      </form>
+    </div>
+    <div class="info-div-area" id="alert-vote">
+      <div class="info-div">
+        <div class="title-div">
+          <h1 id="alert-title"></h1>
+        </div>
+        <div class="text-div">
+          <p id="alert-text"></p>
+        </div>
+        <div class="one-button-div">
+          <a href="http://localhost:5000/index.html"
+            ><button class="button">Voltar e finalizar sessão</button></a
+          >
+        </div>
+      </div>
+    </div>
+    <script src="../js/_basics.js"></script>
+    <script src="../js/votingPage.js"></script>
+  </body>
+</html>

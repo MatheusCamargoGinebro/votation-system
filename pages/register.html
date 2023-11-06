@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de votação - Cadastrar</title>
+
+    <!-- Ícone -->
+    <link rel="icon" type="image/x-icon" href="../images/ifsp-icon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/basics.css" />
+    <link rel="stylesheet" href="../css/div-styles.css" />
+    <link rel="stylesheet" href="../css/forms-styles.css" />
+  </head>
+  <body>
+    <div class="screen-div">
+      <form method="post">
+        <div class="title-div">
+          <h1>Cadastrar</h1>
+        </div>
+        <div class="input-field-div">
+          <div class="input-div">
+            <label for="register-name">Nome:</label>
+            <input
+              type="text"
+              name="register-name"
+              id="register-name"
+              placeholder="Digite seu nome" />
+            <p class="Error" id="register-name-error">
+              Nome de usuário inválido!
+            </p>
+          </div>
+          <div class="input-div">
+            <label for="register-email">Email:</label>
+            <input
+              type="email"
+              name="register-email"
+              id="register-email"
+              placeholder="Digite seu email" />
+            <p class="Error" id="register-email-error">
+              Email inválido! Use o padrão email@aluno.ifsp.edu.br
+            </p>
+          </div>
+          <div class="input-div">
+            <label for="register-password">Senha:</label>
+            <input
+              type="password"
+              name="register-password"
+              id="register-password"
+              placeholder="digite sua senha" />
+            <p class="Error" id="register-password-error">
+              Senha inválida! Use pelo menos 8 caracteres.
+            </p>
+          </div>
+          <div class="input-div">
+            <label for="register-password-confirmation"
+              >Confirme sua senha:</label
+            >
+            <input
+              type="password"
+              name="register-password-confirmation"
+              id="register-password-confirmation"
+              placeholder="confirme sua senha" />
+            <p class="Error" id="register-password-confirmation-error">
+              As senhas não coincidem!
+            </p>
+          </div>
+        </div>
+        <div class="input-div submit-div">
+          <input
+            type="button"
+            id="register-submit"
+            class="button"
+            value="Cadastrar" />
+        </div>
+        <div class="legend-div">
+          <p class="legend">
+            Já tem uma conta? <a href="./login.html">Entrar</a>
+          </p>
+        </div>
+      </form>
+    </div>
+    <script src="../js/_basics.js"></script>
+    <script src="../js/registerPage.js"></script>
+  </body>
+</html>

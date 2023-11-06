@@ -1,0 +1,84 @@
+/*
+O==================================================O
+|--------------------------------------------------|
+| Folha de estilo para a estilização básica do css |
+|--------------------------------------------------|
+O==================================================O
+
+Exemplo: Fontes, medidas pré-definidas, palhetas de cores, formatos, etc.
+*/
+
+/*Importando MUITAS fontes Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*Definindo variáveis de cor e parâmetros de texto e rolagem*/
+html {
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    
+    /*Divs Colors*/
+    --d-c-1: #fcfffe;
+    --d-c-2: #f4f8fb;
+    --d-c-3: #a09c9c;
+    --d-c-4: #424242;
+
+    /*Text Colors*/
+    --t-c-1: #202020;
+    --t-c-2: #202020c7;
+    --t-c-3: #0000007a;
+
+    /*emphasis colors*/
+    --e-c-1: #134611;
+    --e-c-2: #3E8914;
+    --e-c-3: #3DA35D;
+
+    /*preset colors*/
+    --errorColor: #e00000;
+    --rightColor: #08b42d;
+    --warningColor: #fff200;
+
+    font-weight: bolder;
+}
+
+body {
+    background-color: var(--d-c-2);
+}
+
+/*Definições padrões de tamanhos e distâncias*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
+}
+
+.Error{
+    z-index: 1;
+    color: var(--errorColor);
+    font-weight: normal;
+    font-size: small;
+    position: relative;
+    top: -15px;
+    left: 10px;
+
+    transition: all 0.2s;
+    animation: fadein 0.5s;
+}
+
+.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.formRight{
+    border: 1px solid var(--rightColor);
+}
+
+.formError{
+    border: 1px solid var(--errorColor);
+}
+
+.formWarning{
+    border: 1px solid var(--warningColor);
+}

@@ -1,0 +1,87 @@
+form {
+    width: 25rem;
+    background-color: var(--d-c-2);
+    box-shadow: 0 5px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border: solid 1px var(--d-c-4);
+    border-radius: 5px;
+    min-width: 20rem;
+    padding-bottom: 1rem;
+}
+
+.title-div {
+    padding: 1rem;
+    border-bottom: 1px solid var(--t-c-2);
+    margin-bottom: 2rem;
+}
+
+.input-field-div{
+    margin-inline: 2rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.input-div{
+    display: grid;
+}
+
+.input-div label{
+    margin-bottom: 5px;
+    font-size: small;
+    color: var(--t-c-1);
+}
+
+.input-div input:not([type="button"]), select{
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid var(--d-c-3);
+    outline: none;
+    font-size: small;
+    
+    z-index: 50;
+    transition: all 0.2s;
+}
+
+.input-div input:not([type="button"]):hover, select:hover{
+    border: 1px solid var(--e-c-1);
+    padding-left: 13px;
+}
+
+.input-div input:not([type="button"]):focus, select:focus{
+    border: 1px solid var(--e-c-2);
+    padding-left: 15px;
+}
+
+select{
+    cursor: pointer;
+}
+
+.submit-div{
+    border-top: 1px solid var(--t-c-2);
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.legend-div{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.legend{
+    font-size: smaller;
+    color: var(--t-c-1);
+}
+
+.legend a{
+    color: var(--e-c-2);
+
+    transition: all 0.2s;
+}
+
+.legend a:hover{
+    color: var(--e-c-1);
+}
