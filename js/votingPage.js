@@ -105,7 +105,15 @@ const submitVotationForm = document.getElementById("voting-submit").addEventList
         const candidatoID = document.getElementById("voting-candidato").value;
 
         vote(email, candidatoID).then((data) => {
-            console.log(data);
+            if(data.success){
+                document.getElementById("alert-voted").style.display = "flex";
+                document.getElementById("alert-voted-title").innerHTML = data.message;
+                document.getElementById("alert-voted-text").innerHTML = "O Seu voto foi computado com sucesso! Clique no botão abaixo para voltar e finalizar a sessão.";
+            } else{
+                document.getElementById("alert-voted").style.display = "flex";
+                document.getElementById("alert-voted-title").innerHTML = "ops...";
+                document.getElementById("alert-voted-text").innerHTML = "Ocorreu um erro ao computar o seu voto. Clique no botão abaixo para voltar e finalizar a sessão.";
+            }
         });
     } else {
         if(check.email == false){

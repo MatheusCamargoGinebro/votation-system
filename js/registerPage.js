@@ -131,7 +131,11 @@ const submitRegisterForm = document.getElementById("register-submit").addEventLi
         const password = document.getElementById("register-password").value;
 
         register(name, email, password).then((data) => {
-            console.log(data);
+            if(data.session === true){
+                window.location.href = "http://localhost:5000/pages/voting.html";
+            } else {
+                alert("Erro ao cadastrar usuário.");
+            }
         });
     } else {
         if(check.name === false) {
