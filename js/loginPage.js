@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", function(){
     sessionChecker().then((data) => {
         console.log(data);
 
-        if(data.level != 0){
-            console.log("saia");
+        if(data.level == 1){
+            window.location.href = "http://localhost:5000/pages/admin.html";
+        } else if (data.level == 2) {
+            window.location.href = "http://localhost:5000/pages/voting.html";
         }
     })
 });
@@ -58,11 +60,17 @@ const password = document.getElementById("login-password").addEventListener("inp
 // Função de submissão de formulário:
 const submitLoginForm = document.getElementById("login-submit").addEventListener("click", function(e){
     if(checker()){
-        const name = document.getElementById("login-name").value;
+        const name = document.getElementById("login-username").value;
         const password = document.getElementById("login-password").value;
 
         login(name, password).then((data) => {
-            console.log(data);
+            if(data.level == 0){
+                console.log(data.message);
+            } else if (data.level == 1){
+                window.location.href = "http://localhost:5000/pages/admin.html";
+            } else {
+                window.location.href = "http://localhost:5000/pages/voting.html";
+            }
         });
     } else{
         if(check.name === false) {
