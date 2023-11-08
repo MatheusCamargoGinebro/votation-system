@@ -1,9 +1,8 @@
-#Votation System
-
-## By Camarg0vs
+# Votation System <sub> By Camarg0vs</sub>
 
 ### Connecction with database:
-
+> [!IMPORTANT]
+> Para o sistema funcionar, deve-se criar o arquivo ``./php/connection.php``.
 ```php
 <?php
     ini_set("display_errors", 1);
