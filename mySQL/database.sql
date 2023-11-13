@@ -31,22 +31,15 @@ CREATE TABLE
 
 INSERT INTO
     estudantes (id, nome_estudante, email, senha)
-VALUES
-    (1, 'admin', 'admin@aluno.ifsp.edu.br', 'admin'),
-    (
-        2,
-        'Matheus',
-        'matheus.ginebro@aluno.ifsp.edu.br',
-        'M4th3us@'
-    );
+VALUES (1, 'admin', 'admin@aluno.ifsp.edu.br', '4dM1n@m4g0d0_h7m1');
 
 INSERT INTO
     candidatos (numero_candidato, nome_candidato)
 VALUES
-    (1, 'Camargo'),
-    (2, 'João'),
-    (3, 'Victor Hugo'),
-    (4, 'Vicente Santos');
+    (1, 'Candidato1'),
+    (2, 'Candidato2'),
+    (3, 'Candidato3'),
+    (4, 'Candidato4');
 
 select
     *

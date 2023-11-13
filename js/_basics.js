@@ -24,3 +24,15 @@ function changeInputStyle(inputID, inputErrorID, errorMessage, state) {
     document.getElementById(inputErrorID).innerHTML = errorMessage;
   }
 }
+
+function hashPassword(password) {
+  let hash = 0;
+
+  for (let i = 0; i < password.length; i++) {
+    let char = password.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash = hash & hash;
+  }
+
+  return hash;
+}

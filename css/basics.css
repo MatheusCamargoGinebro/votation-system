@@ -70,20 +70,7 @@ body {
     left: 0px;
 }
 
-
 .disabled {
     pointer-events: none;
     opacity: 0.5;
-}
-
-.formRight {
-    border: 1px solid var(--rightColor);
-}
-
-.formError {
-    border: 1px solid var(--errorColor);
-}
-
-.formWarning {
-    border: 1px solid var(--warningColor);
 }

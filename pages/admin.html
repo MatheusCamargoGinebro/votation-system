@@ -16,7 +16,35 @@
 </head>
 <body>
     <div class="screen-div">
-        ADMIN
+        <div class="content-div">
+            <div div="tab-field">
+                <ul class="tab">
+                    <li><button id="see-candidates" class="tab-btn selected-tab">Ver candidatos cadastrados</button></li>
+                    <li><button id="see-students" class="tab-btn">Ver estudantes cadastrados</button></li>
+                </ul>
+                <div class="content-field">
+                    <div id="candidates-tab-field" class="tab-item">
+                        <div class="subtitle-div">
+                            <h1>Exibindo candidatos</h1>
+                        </div>
+                        <div id="candidatesTable">
+                        </div>
+                    </div>
+                    <div id="students-tab-field" class="tab-item tab-item-disabled">
+                        <div class="subtitle-div">
+                            <h1>Exibindo estudantes</h1>
+                        </div>
+                        <div id="studentsTable">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="leave-btn-div">
+                <a href="http://localhost:5000/">Sair</a>
+            </div>
+        </div>
     </div>
     <script src="../js/_basics.js"></script>
     <script src="../js/adminPage.js"></script>

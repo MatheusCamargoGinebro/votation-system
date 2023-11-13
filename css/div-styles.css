@@ -11,6 +11,14 @@
     text-align: center;
 }
 
+.note-div{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    padding: 1rem;
+    color: var(--t-c-3);
+}
+
 .text-div {
     text-align: center;
     padding-inline: 2rem;
@@ -90,4 +98,131 @@
     background-color: var(--d-c-1);
     border: 1px solid var(--e-c-1);
     color: var(--e-c-1);
+}
+
+/* ADMIN SCREEN */
+
+.content-div {
+    position: fixed;
+    top: 5rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.26);
+}
+
+.tab{
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    list-style: none;
+}
+
+.tab li{
+    border-radius: 5px;
+    width: 50%;
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    color: var(--t-c-2);
+    background-color: var(--d-c-2);
+}
+
+.tab-btn{
+    border-radius: 5px 5px 0px 0px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    color: var(--t-c-2);
+    background-color: var(--d-c-2);
+    border-bottom: 1px solid var(--e-c-1);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover{
+    background-color: var(--d-c-1);
+    color: var(--t-c-2);
+}
+
+.selected-tab{
+    color: var(--t-c-1);
+    font-weight: bold;
+    border-radius: 5px 5px 0px 0px;
+    border: 1px solid var(--e-c-1);
+    border-bottom: 0;
+}
+
+.selected-tab:hover{
+    background-color: var(--d-c-2);
+    color: var(--t-c-2);
+}
+
+.content-field{
+    display: flex;
+    justify-content: center;
+    border-radius: 0px 0px 5px 5px;
+    border: 1px solid var(--e-c-1);
+    border-top: 0;
+}
+
+.subtitle-div{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.tab-item{
+    border-radius: 5px;
+    padding: 1rem;
+
+}
+
+.tab-item-disabled{
+    border-radius: 5px;
+    display: none;
+}
+
+/* table styles */
+table{
+    width: 50rem;
+    border-collapse: collapse;
+    border: 1px solid var(--e-c-1);
+}
+tr{
+    background-color: var(--d-c-2);
+    color: var(--t-c-2);
+    padding: 10px;
+    border: 1px solid var(--e-c-1);
+    border-bottom: 0;
+}
+th{
+    color: var(--t-c-1);
+}
+
+td, th{
+    padding: 10px;
+    width: 25%;
+    border: 1px solid var(--e-c-1);
+    border-top: 0;
+    text-align: center;
+}
+
+.leave-btn-div{
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+.leave-btn-div a{
+    background-color: var(--e-c-2);
+    color: var(--d-c-1);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: normal;
+
+    transition: all 0.2s;
+}
+
+.leave-btn-div a:hover{
+    background-color: var(--e-c-1);
+    color: var(--d-c-1);
 }
