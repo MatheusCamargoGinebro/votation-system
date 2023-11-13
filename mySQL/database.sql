@@ -36,10 +36,10 @@ VALUES (1, 'admin', 'admin@aluno.ifsp.edu.br', '4dM1n@m4g0d0_h7m1');
 INSERT INTO
     candidatos (numero_candidato, nome_candidato)
 VALUES
-    (1, 'Candidato1'),
-    (2, 'Candidato2'),
-    (3, 'Candidato3'),
-    (4, 'Candidato4');
+    (10, 'Candidato1'),
+    (13, 'Candidato2'),
+    (22, 'Candidato3'),
+    (51, 'Candidato4');
 
 select
     *
