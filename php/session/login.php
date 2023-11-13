@@ -7,7 +7,7 @@ if (isset($data['name']) && isset($data['password'])) {
     $name = $data['name'];
     $password = $data['password'];
 
-    $sql = "SELECT * FROM `estudantes` WHERE `nome_estudante` = '" . $name . "' AND `senha` = '" . $password . "'";
+    $sql = "SELECT * FROM `estudantes` WHERE (`nome_estudante` = '$name' OR `email` = '$name') AND `senha` = '$password'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) == 1) {
