@@ -27,7 +27,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
     echo json_encode(array("session" => false, "level" => 0, "voted" => false, "email" => ""));
 }
 
-
 mysqli_close($conn);
 exit();
 ?>

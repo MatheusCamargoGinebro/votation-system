@@ -15,4 +15,7 @@ if (mysqli_num_rows($result) > 0) {
     http_response_code(201);
     echo json_encode(array("size" => 0, "candidates" => ""));
 }
+
+mysqli_close($conn);
+exit();
 ?>

@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     candidatesTable += "</table>";
 
     document.getElementById("candidatesTable").innerHTML = candidatesTable;
-
     var studentsTable =
       "<table><tr><th>Nome do aluno</th><th>Email do aluno</th><th>ID do aluno</th></tr>";
     for (var i = 0; i < data.StudentsSize; i++) {

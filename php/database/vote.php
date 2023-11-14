@@ -43,4 +43,7 @@ if (isset($data['email']) && isset($data['candidateID'])) {
     http_response_code(201);
     echo json_encode(array("session" => true, "success" => false, "message" => "Dados vazios."));
 }
+
+mysqli_close($conn);
+exit();
 ?>

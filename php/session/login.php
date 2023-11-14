@@ -37,4 +37,5 @@ if (isset($data['name']) && isset($data['password'])) {
 }
 
 mysqli_close($conn);
+exit();
 ?>

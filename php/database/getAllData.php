@@ -10,24 +10,30 @@ if ($candidatesSize > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $candidates[] = $row;
     }
+} else {
+    $candidates = array();
+}
 
-    $sql = "SELECT `id`, `nome_estudante`, `email` FROM estudantes";
-    $result = mysqli_query($conn, $sql);
-    $studentsSize = mysqli_num_rows($result);
+$sql = "SELECT `id`, `nome_estudante`, `email` FROM estudantes";
+$result = mysqli_query($conn, $sql);
+$studentsSize = mysqli_num_rows($result);
 
-    if(mysqli_num_rows($result) > 0) {
-        $students = array();
-        while ($row = mysqli_fetch_assoc($result)) {
-            $students[] = $row;
-        }
-        http_response_code(200);
-        echo json_encode(array("candidatesSize" => $candidatesSize, "candidates" => $candidates, "StudentsSize" => $studentsSize, "students" => $students));
-    } else {
-        http_response_code(201);
-        echo json_encode(array("candidatesSize" => $candidatesSize, "candidates" => $candidates, "StudentsSize" => 0, "students" => ""));
+if (mysqli_num_rows($result) > 0) {
+    $students = array();
+    while ($row = mysqli_fetch_assoc($result)) {
+        $students[] = $row;
     }
 } else {
-    http_response_code(201);
-    echo json_encode(array("candidatesSize" => 0, "candidates" => "", "StudentsSize" => 0, "students" => ""));
+    $students = array();
 }
+
+if ($candidatesSize > 0 || $studentsSize > 0) {
+    http_response_code(200);
+} else {
+    http_response_code(201);
+}
+echo json_encode(array("candidatesSize" => $candidatesSize, "candidates" => $candidates, "StudentsSize" => $studentsSize, "students" => $students));
+
+mysqli_close($conn);
+exit();
 ?>

@@ -71,5 +71,7 @@ if (!isset($_SESSION['id'])) {
         echo json_encode(array("success" => false, "session" => false, "level" => 1, "message" => "Dados inválidos.", "name" => $nameStatus, "number" => $numberStatus));
     }
 }
+
+mysqli_close($conn);
 exit();
 ?>
