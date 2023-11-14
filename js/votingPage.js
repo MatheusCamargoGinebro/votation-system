@@ -55,7 +55,7 @@ async function loadCanditates() {
         '<option value="' +
         data.candidates[i].id +
         '">' +
-        data.candidates[i].id +
+        data.candidates[i].numero_candidato +
         " - " +
         data.candidates[i].nome_candidato +
         "</option>";

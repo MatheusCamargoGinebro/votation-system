@@ -73,49 +73,39 @@ const password = document
     checker();
   });
 
-// Função de submissão de formulário:
-const submitLoginForm = document
-  .getElementById("login-submit")
-  .addEventListener("click", function (e) {
-    if (checker()) {
-      const name = document.getElementById("login-username").value;
-      const password = document.getElementById("login-password").value;
+  const submitLoginForm = document.getElementById("login-submit").addEventListener("click", async function(e){
+    if(checker()) {
+        const name = document.getElementById("login-username").value;
+        const password = document.getElementById("login-password").value;
 
-      login(name, password).then((data) => {
-        if (data.session) {
-          if (data.level == 1) {
-            window.location.href = "http://localhost:5000/pages/admin.html";
-          } else if (data.level == 2) {
-            window.location.href = "http://localhost:5000/pages/voting.html";
-          }
-        } else {
-          changeInputStyle(
-            "login-submit",
-            "login-submit-error",
-            data.message,
-            false
-          );
-        }
-      });
+        const senha_criptografada = await criptografarSenha(password);
+
+        login(name, senha_criptografada).then((data) => {
+            if (data.session) {
+              if (data.level == 1) {
+                window.location.href = "http://localhost:5000/pages/admin.html";
+              } else if (data.level == 2) {
+                window.location.href = "http://localhost:5000/pages/voting.html";
+              }
+            } else {
+              changeInputStyle(
+                "login-submit",
+                "login-submit-error",
+                data.message,
+                false
+              );
+            }
+        });
     } else {
-      if (check.name === false) {
-        changeInputStyle(
-          "login-username",
-          "login-username-error",
-          "Nome de usuário inválido.",
-          false
-        );
-      }
-      if (check.password === false) {
-        changeInputStyle(
-          "login-password",
-          "login-password-error",
-          "Senha inválida.",
-          false
-        );
-      }
+        if(check.name === false) {
+            changeInputStyle("login-username", "login-username-error", "Nome de usuário inválido.", false);
+        }
+
+        if(check.password === false) {
+            changeInputStyle("login-password", "login-password-error", "Senha inválida.", false);
+        }
     }
-  });
+});
 
 async function login(name, password) {
   const url = "http://localhost:5000/php/session/login.php";

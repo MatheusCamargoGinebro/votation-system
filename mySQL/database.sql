@@ -31,7 +31,7 @@ CREATE TABLE
 
 INSERT INTO
     estudantes (id, nome_estudante, email, senha)
-VALUES (1, 'admin', 'admin@aluno.ifsp.edu.br', '4dM1n@m4g0d0_h7m1');
+VALUES (1, 'admin', 'admin@aluno.ifsp.edu.br', '567231b8279625143f58491bf19e1631b20bd71b974234b796468494fa8b5302'); /*4dM1n@m4g0d0_h7m1*/
 
 INSERT INTO
     candidatos (numero_candidato, nome_candidato)
