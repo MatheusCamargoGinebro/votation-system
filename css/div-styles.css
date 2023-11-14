@@ -206,13 +206,18 @@ td, th{
     text-align: center;
 }
 
-.leave-btn-div{
+.btn-div{
     position: fixed;
     bottom: 2rem;
-    left: 2rem;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 2rem;
 }
 
-.leave-btn-div a{
+.btn-div a{
     background-color: var(--e-c-2);
     color: var(--d-c-1);
     padding: 5px 10px;
@@ -222,7 +227,7 @@ td, th{
     transition: all 0.2s;
 }
 
-.leave-btn-div a:hover{
+.btn-div a:hover{
     background-color: var(--e-c-1);
     color: var(--d-c-1);
 }

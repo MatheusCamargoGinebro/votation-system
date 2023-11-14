@@ -1,5 +1,3 @@
-console.log("_basics.js está incluido na página atual.");
-
 async function sessionChecker() {
   const url = "http://localhost:5000/php/session/checkSession.php";
 

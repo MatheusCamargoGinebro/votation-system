@@ -60,4 +60,5 @@ if (isset($data['name']) && isset($data['email']) && isset($data['password'])) {
     http_response_code(201);
     echo json_encode(array("session" => false, "level" => 0, "message" => "Dados vazios.", "email" => false, "name" => false));
 }
+exit();
 ?>

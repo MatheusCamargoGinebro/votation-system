@@ -1,13 +1,9 @@
-console.log("registerPage.js está incluido na página atual.");
-
 document.addEventListener("DOMContentLoaded", function () {
   sessionChecker().then((data) => {
-    console.log(data);
-
     if (data.level == 1) {
-      window.location.href = "http://localhost:5000/pages/admin.html";
+      window.location.href = "http://localhost:5000/pages/admin/admin.html";
     } else if (data.level == 2) {
-      window.location.href = "http://localhost:5000/pages/voting.html";
+      window.location.href = "http://localhost:5000/pages/session/voting.html";
     } else if (data.level != 0) {
       window.location.href = "http://localhost:5000/";
     }
@@ -227,9 +223,8 @@ const submitRegisterForm = document
       const senha_criptografada = await criptografarSenha(password);
 
       register(name, email, senha_criptografada).then((data) => {
-        console.log(data);
         if (data.session === true) {
-          window.location.href = "http://localhost:5000/pages/voting.html";
+          window.location.href = "http://localhost:5000/pages/session/voting.html";
         } else {
           if (data.email === false) {
             changeInputStyle(

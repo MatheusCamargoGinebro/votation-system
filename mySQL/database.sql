@@ -33,14 +33,6 @@ INSERT INTO
     estudantes (id, nome_estudante, email, senha)
 VALUES (1, 'admin', 'admin@aluno.ifsp.edu.br', '567231b8279625143f58491bf19e1631b20bd71b974234b796468494fa8b5302'); /*4dM1n@m4g0d0_h7m1*/
 
-INSERT INTO
-    candidatos (numero_candidato, nome_candidato)
-VALUES
-    (10, 'Candidato1'),
-    (13, 'Candidato2'),
-    (22, 'Candidato3'),
-    (51, 'Candidato4');
-
 select
     *
 from

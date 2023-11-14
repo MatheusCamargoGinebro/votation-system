@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.V - Registrar candidato</title>
+
+    <!-- Ícone -->
+    <link rel="icon" type="image/x-icon" href="../../images/ifsp-icon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/basics.css" />
+    <link rel="stylesheet" href="../../css/div-styles.css" />
+    <link rel="stylesheet" href="../../css/forms-styles.css" />
+  </head>
+</head>
+<body>
+    <div class="screen-div">
+        <form>
+            <div class="title-div">
+                <h1>Registrar candidato</h1>
+            </div>
+            <div class="input-field-div">
+                <div class="input-div">
+                    <label for="register-candidate-name">Nome:</label>
+                    <input type="text" name="register-candidate-name" id="register-candidate-name" placeholder="Digite o nome do candidato">
+                    <p class="Error" id="register-candidate-name-error">Nome inválido!</p>
+                </div>
+                <div class="input-div">
+                    <label for="register-candidate-number">Número do candidato:</label>
+                    <input type="text" name="register-candidate-number" id="register-candidate-number" placeholder="Digite o número do candidato">
+                    <p class="Error" id="register-candidate-number-error">Número inválido!</p>
+                </div>
+                <div class="input-div submit-div">
+                    <input type="button" id="register-candidate-submit" value="Registrar" class="button">
+                    <p class="Error" id="register-candidate-submit-error">_</p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="../../js/_basics.js"></script>
+    <script src="../../js/adminPageRegister.js"></script>
+</body>
+</html>

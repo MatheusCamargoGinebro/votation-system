@@ -1,20 +1,15 @@
-console.log("adminPage.js está incluido na página atual.");
-
 document.addEventListener("DOMContentLoaded", function () {
   sessionChecker().then((data) => {
-    console.log(data);
-
     if (data.level == 0) {
       window.location.href = "http://localhost:5000/";
     } else if (data.level == 2) {
-      window.location.href = "http://localhost:5000/pages/voting.html";
+      window.location.href = "http://localhost:5000/pages/session/voting.html";
     } else if (data.level != 1) {
-      window.location.href = "http://localhost:5000/pages/admin.html";
+      window.location.href = "http://localhost:5000/pages/admin/admin.html";
     }
   });
 
   getAllData().then((data) => {
-    console.log(data);
     var candidatesTable =
       "<table><tr><th>Nome do candidato</th><th>Número do candidato</th><th>Quantidade de Votos</th></tr>";
     for (var i = 0; i < data.candidatesSize; i++) {

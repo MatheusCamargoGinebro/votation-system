@@ -1,15 +1,11 @@
-console.log("votingPage.js está incluido na página atual.");
-
 // usando uma função anônima assíncrona como argumento do evento
 document.addEventListener("DOMContentLoaded", async function () {
   // usando await para esperar pela resolução da promise
   let data = await sessionChecker();
-  console.log(data);
-
   if (data.level == 0) {
     window.location.href = "http://localhost:5000/";
   } else if (data.level == 1) {
-    window.location.href = "http://localhost:5000/pages/admin.html";
+    window.location.href = "http://localhost:5000/pages/admin/admin.html";
   } else if (data.level == 2) {
     if (data.voted == false) {
       document.getElementById("voting-email").value = data.email;
@@ -48,20 +44,26 @@ async function loadCanditates() {
 
     data = await response.json();
 
-    var Content = '<option value="">Escolha o seu candidato</option>';
+    if(data.candidates.length > 0){
+      var Content = '<option value="">Escolha o seu candidato</option>';
 
-    for (let i = 0; i < data.candidates.length; i++) {
-      Content +=
-        '<option value="' +
-        data.candidates[i].id +
-        '">' +
-        data.candidates[i].numero_candidato +
-        " - " +
-        data.candidates[i].nome_candidato +
-        "</option>";
+      for (let i = 0; i < data.candidates.length; i++) {
+        Content +=
+          '<option value="' +
+          data.candidates[i].id +
+          '">' +
+          data.candidates[i].numero_candidato +
+          " - " +
+          data.candidates[i].nome_candidato +
+          "</option>";
+      }
+
+      document.getElementById("voting-candidato").innerHTML = Content;
+    }else {
+      document.getElementById("alert-voted").style.display = "flex";
+      document.getElementById("alert-voted-title").innerHTML = "Não há candidatos cadastrados!";
+      document.getElementById("alert-voted-text").innerHTML = "Não há candidatos cadastrados, portanto, ainda não é possível votar. Clique no botão abaixo para voltar e finalizar a sessão.";
     }
-
-    document.getElementById("voting-candidato").innerHTML = Content;
   } catch (error) {
     console.error("Error:", error);
   }
